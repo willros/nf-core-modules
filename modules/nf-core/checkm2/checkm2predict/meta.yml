@@ -1,0 +1,58 @@
+name: checkm2_checkm2predict
+description: CheckM2 provides a set of tools for assessing the quality of genomes recovered metagenomes using machine learning.
+keywords:
+  - checkm2
+  - mag
+  - metagenome
+  - quality
+  - isolates
+  - microbes
+  - single cells
+  - completeness
+  - contamination
+  - bins
+  - genome bins
+tools:
+  - "checkm2":
+      description: "CheckM2 - Predicting the quality of metagenome-recovered bins"
+      homepage: "https://github.com/chklovski/CheckM2"
+      documentation: "https://github.com/chklovski/CheckM2"
+      tool_dev_url: "https://github.com/chklovski/CheckM2"
+      doi: "10.1038/s41592-023-01940-w"
+      licence: "['GPL v3']"
+## TODO nf-core: Add a description of all of the variables used as input
+input:
+  # Only when we have meta
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. `[ id:'test', single_end:false ]`
+
+  ## TODO nf-core: Delete / customise this example input
+  - bam:
+      type: file
+      description: Sorted BAM/CRAM/SAM file
+      pattern: "*.{bam,cram,sam}"
+
+## TODO nf-core: Add a description of all of the variables used as output
+output:
+  #Only when we have meta
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. `[ id:'test', single_end:false ]`
+
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  ## TODO nf-core: Delete / customise this example output
+  - bam:
+      type: file
+      description: Sorted BAM/CRAM/SAM file
+      pattern: "*.{bam,cram,sam}"
+
+authors:
+  - "@willros"

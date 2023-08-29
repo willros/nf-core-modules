@@ -1,0 +1,38 @@
+name: checkm2_checkm2db
+description: Downloads a taxonomy database.
+keywords:
+  - checkm2
+  - database
+  - mag
+  - metagenome
+  - quality
+  - isolates
+  - microbes
+  - single cells
+  - completeness
+  - contamination
+  - bins
+  - genome bins
+tools:
+  - "checkm2":
+      description: "CheckM2 - Predicting the quality of metagenome-recovered bins"
+      homepage: "https://github.com/chklovski/CheckM2"
+      documentation: "https://github.com/chklovski/CheckM2"
+      tool_dev_url: "https://github.com/chklovski/CheckM2"
+      doi: "10.1038/s41592-023-01940-w"
+      licence: "['GPL v3']"
+
+#  There is no input. This module downloads a pre-built taxonomy database for use with checkm2.
+
+output:
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  - db:
+      type: file
+      description: DIAMOND database for rapid annotation
+      pattern: "*.{dmnd}"
+
+authors:
+  - "@willros"

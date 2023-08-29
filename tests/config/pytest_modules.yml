@@ -694,6 +694,14 @@ checkm/qa:
   - modules/nf-core/checkm/qa/**
   - tests/modules/nf-core/checkm/qa/**
 
+checkm2/checkm2db:
+  - modules/nf-core/checkm2/checkm2db/**
+  - tests/modules/nf-core/checkm2/checkm2db/**
+
+checkm2/checkm2predict:
+  - modules/nf-core/checkm2/checkm2predict/**
+  - tests/modules/nf-core/checkm2/checkm2predict/**
+
 checkv/downloaddatabase:
   - modules/nf-core/checkv/downloaddatabase/**
   - tests/modules/nf-core/checkv/downloaddatabase/**

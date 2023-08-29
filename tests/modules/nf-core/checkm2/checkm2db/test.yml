@@ -1,0 +1,7 @@
+- name: checkm2 checkm2db test_checkm2_checkm2db
+  command: nextflow run ./tests/modules/nf-core/checkm2/checkm2db -entry test_checkm2_checkm2db -c ./tests/config/nextflow.config -c ./tests/modules/nf-core/checkm2/checkm2db/nextflow.config
+  tags:
+    - checkm2
+    - checkm2/checkm2db
+  files:
+    - path: output/checkm2/checkm2_db/CheckM2_database/uniref100.KO.1.dmnd
