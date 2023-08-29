@@ -9,7 +9,7 @@ process CHECKM2_CHECKM2DB {
 
     output:
     path 'checkm2_db/CheckM2_database/uniref100.KO.1.dmnd', emit: db
-    path "versions.yml"           , emit: versions
+    path "versions.yml"                                   , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
