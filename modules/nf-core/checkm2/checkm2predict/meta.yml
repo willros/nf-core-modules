@@ -20,24 +20,18 @@ tools:
       tool_dev_url: "https://github.com/chklovski/CheckM2"
       doi: "10.1038/s41592-023-01940-w"
       licence: "['GPL v3']"
-## TODO nf-core: Add a description of all of the variables used as input
 input:
-  # Only when we have meta
   - meta:
       type: map
       description: |
         Groovy Map containing sample information
         e.g. `[ id:'test', single_end:false ]`
-
-  ## TODO nf-core: Delete / customise this example input
-  - bam:
+  - db_file:
       type: file
-      description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: external DIAMOND database, often called `uniref100.KO.1.dmnd`.
+      pattern: "*.{dmnd}"
 
-## TODO nf-core: Add a description of all of the variables used as output
 output:
-  #Only when we have meta
   - meta:
       type: map
       description: |
@@ -48,11 +42,18 @@ output:
       type: file
       description: File containing software versions
       pattern: "versions.yml"
-  ## TODO nf-core: Delete / customise this example output
-  - bam:
+  - quality_report:
       type: file
-      description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: File with quality report
+      pattern: "*.{tsv}"
+  - diamond:
+      type: file
+      description: Diamond
+      pattern: "*.{tsv}"
+  - protein:
+      type: file
+      description: Protein
+      pattern: "*.{faa}"
 
 authors:
   - "@willros"
